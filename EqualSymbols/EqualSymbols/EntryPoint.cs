@@ -6,7 +6,6 @@ namespace EqualSymbols
   {
     static void Main(string[] args)
     {
-      //Console.Write("Enter character sequence: ");
       try
       {
         string characterSequence = args[0];
