@@ -8,8 +8,7 @@ namespace EqualSymbols
     {
       try
       {
-        string characterSequence = args[0];
-        Sequence sequence = new Sequence(characterSequence);
+        Sequence sequence = new Sequence(args[0]);
         int maxRepetitions = sequence.DetermineMaxOfRepetitions();
         Console.WriteLine("Maximum symbol repetition = " + maxRepetitions);
       }
