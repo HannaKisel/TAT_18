@@ -21,16 +21,16 @@
     {
       int maxRepetitions = 0;
       int counter = 0;
-      char firstSymbol = CurrentSequence[0];
-      for (int i = 1; i < CurrentSequence.Length - 1; i++)
+      char firstSymbol;
+      for (int i = 0; i < CurrentSequence.Length - 1; i++)
       {
+        firstSymbol = CurrentSequence[i];
         if (firstSymbol == CurrentSequence[i + 1])
         {
           counter++;
         }
         else
         {
-          firstSymbol = CurrentSequence[i + 1];
           counter = 0;
         }
         if (maxRepetitions < counter)
