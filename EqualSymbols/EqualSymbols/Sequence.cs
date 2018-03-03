@@ -33,6 +33,7 @@
         {
           counter = 0;
         }
+
         if (maxRepetitions < counter)
         {
           maxRepetitions = counter;
