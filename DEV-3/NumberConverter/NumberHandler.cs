@@ -11,7 +11,7 @@ namespace NumberConverter
   {
     private int systemBase;
 
-    public int Number { get; set; }
+    private int number;
 
     public int SystemBase
     {
@@ -26,6 +26,22 @@ namespace NumberConverter
           throw new ArgumentException();
         }
         systemBase = value;
+      }
+    }
+
+    public int Number
+    {
+      get
+      {
+        return number;
+      }
+      set
+      {
+        if (value < 0)
+        {
+          throw new ArgumentException();
+        }
+        number = value;
       }
     }
 
@@ -46,8 +62,8 @@ namespace NumberConverter
 
       arrayOfResidues = CalculateRemainderOfDivision();
       arrayOfResidues.Reverse();
-      return (systemBase > 10) ? TransformIntoSystemWithoutLetters(arrayOfResidues) :
-        TransformIntoSystemWithLetters(arrayOfResidues);
+      return (systemBase > 10) ? TransformIntoSystemWithLetters(arrayOfResidues) :
+        TransformIntoSystemWithoutLetters(arrayOfResidues);
     }
 
     private string TransformIntoSystemWithoutLetters(ArrayList arrayOfResidues)
