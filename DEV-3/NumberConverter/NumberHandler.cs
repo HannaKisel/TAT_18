@@ -4,6 +4,9 @@ using System.Text;
 
 namespace NumberConverter
 {
+  /// <summary>
+  /// This class contains methods that handle numbers
+  /// </summary>
   class NumberHandler
   {
     private int systemBase;
@@ -43,35 +46,37 @@ namespace NumberConverter
 
       arrayOfResidues = CalculateRemainderOfDivision();
       arrayOfResidues.Reverse();
+      return (systemBase > 10) ? TransformIntoSystemWithoutLetters(arrayOfResidues) :
+        TransformIntoSystemWithLetters(arrayOfResidues);
+    }
 
-      if (systemBase > 10)
+    private string TransformIntoSystemWithoutLetters(ArrayList arrayOfResidues)
+    {
+      StringBuilder newNumber = new StringBuilder();
+      foreach (int modulo in arrayOfResidues)
       {
-        foreach (int el in arrayOfResidues)
-        {
-          if (el >= 10)
-          {
-            newNumber.Append(ConvertNumberIntoLetter(el));
-          }
-          else
-          {
-            newNumber.Append(el);
-          }
-        }
+        newNumber.Append(modulo);
       }
-      else
+      return newNumber.ToString();
+    }
+
+    private string TransformIntoSystemWithLetters(ArrayList arrayOfResidues)
+    {
+      StringBuilder newNumber = new StringBuilder();
+      foreach (int modulo in arrayOfResidues)
       {
-        foreach (int el in arrayOfResidues)
+        if (modulo >= 10)
         {
-          newNumber.Append(el);
+          newNumber.Append(ConvertNumberIntoLetter(modulo));
+        }
+        else
+        {
+          newNumber.Append(modulo);
         }
       }
       return newNumber.ToString();
     }
 
-    /// <summary>
-    /// This method calculates the remainders from the division into the base of the required number system
-    /// </summary>
-    /// <returns></returns>
     private ArrayList CalculateRemainderOfDivision()
     {
       ArrayList newNumber = new ArrayList();
@@ -83,13 +88,9 @@ namespace NumberConverter
       return newNumber;
     }
 
-    /// <summary>
-    /// This method converts a number greater than 9 into the corresponding letter
-    /// </summary>
-    /// <returns>letter corresponding to the entered number</returns>
-    private char ConvertNumberIntoLetter(int el)
+    private char ConvertNumberIntoLetter(int modulo)
     {
-      return (char)('A' + el - 10);
+      return (char)('A' + modulo - 10);
     }
   }
 }
