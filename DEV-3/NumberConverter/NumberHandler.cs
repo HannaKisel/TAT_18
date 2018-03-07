@@ -10,7 +10,6 @@ namespace NumberConverter
   class NumberHandler
   {
     private int systemBase;
-
     private int number;
 
     public int SystemBase
