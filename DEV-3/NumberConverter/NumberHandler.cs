@@ -56,6 +56,10 @@ namespace NumberConverter
     /// <returns></returns>
     public string ConvertNumber()
     {
+      if (Number == 0)
+      {
+        return 0.ToString();
+      }
       StringBuilder newNumber = new StringBuilder();
       ArrayList arrayOfResidues = new ArrayList();
 
