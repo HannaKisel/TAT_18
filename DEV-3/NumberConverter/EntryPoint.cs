@@ -12,7 +12,7 @@ namespace NumberConverter
         int systemBase = int.Parse(args[1]);
         NumberHandler numberHandler = new NumberHandler(number, systemBase);
         string resultingNumber = numberHandler.ConvertNumber();
-        Console.WriteLine("Your number in the " + systemBase + " system is N=" + resultingNumber);
+        Console.WriteLine("Your number="+ number+" in the " + systemBase + " system is N=" + resultingNumber);
       }
       catch (ArgumentException)
       {
