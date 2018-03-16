@@ -6,7 +6,7 @@ namespace StringCreator
   /// <summary>
   /// This class contains methods that work with a string
   /// </summary>
-  class Line
+  public class Line
   {
     private string currentLine;
 
