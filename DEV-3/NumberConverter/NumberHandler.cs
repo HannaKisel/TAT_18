@@ -7,7 +7,7 @@ namespace NumberConverter
   /// <summary>
   /// This class contains methods that handle numbers
   /// </summary>
-  class NumberHandler
+  public class NumberHandler
   {
     private int systemBase;
     private int number;
