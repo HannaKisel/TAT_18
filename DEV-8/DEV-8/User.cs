@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace DEV_8
 {
@@ -84,9 +88,13 @@ namespace DEV_8
       Age = age;
     }
 
+    public User()
+    {
+    }
+
     public void VriteInformationToConsole()
     {
-      Console.WriteLine("first name is {0} \n second name is {1}\n gender is {2}\n age is {3}" + firstName, secondName, gender, age);
+      Console.WriteLine(" first name is " + FirstName + " \n second name is " + SecondName + "\n gender is " + Gender + "\n age is " +Age);
     }
   }
 }

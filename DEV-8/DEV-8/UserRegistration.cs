@@ -2,15 +2,8 @@
 
 namespace DEV_8
 {
-  /// <summary>
-  /// This class contains a method that creates a new user with the entered parameters
-  /// </summary>
   class UserRegistration
   {
-    /// <summary>
-    /// Method that creates a new user with the entered parameters
-    /// </summary>
-    /// <returns>new user</returns>
     public User ReadNewUser()
     {
       Console.WriteLine("Enter user's first name");

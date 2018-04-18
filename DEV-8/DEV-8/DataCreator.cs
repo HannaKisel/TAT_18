@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DEV_8
 {
+  /// <summary>
+  /// Contains methods that create the necessary information
+  /// </summary>
   class DataCreator
   {
     /// <summary>
@@ -32,7 +33,7 @@ namespace DEV_8
     }
 
     /// <summary>
-    /// This class count average age of users
+    /// Counts the average age using linq
     /// </summary>
     /// <param name="AllUsers"></param>
     /// <returns></returns>
@@ -40,12 +41,6 @@ namespace DEV_8
     {
       return AllUsers.Select(u => u.Age).Average();
     }
-
-    /// <summary>
-    /// This method finds the oldest users
-    /// </summary>
-    /// <param name="allUsers"></param>
-    /// <returns></returns>
     public List<User> FindEldestUsers(List<User> allUsers)
     {
       int maxAge = allUsers.Max(user => user.Age);

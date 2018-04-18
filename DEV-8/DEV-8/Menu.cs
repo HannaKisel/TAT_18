@@ -2,16 +2,11 @@
 
 namespace DEV_8
 {
-  /// <summary>
-  /// This class contains methods for providing menus to the user
-  /// </summary>
   class Menu
   {
-    CommandReciever commandReciever = new CommandReciever();
-    
-    /// <summary>
-    /// This metod gets menu
-    /// </summary>
+    CommandReceiver commandReciever = new CommandReceiver();
+    CommandInvoker commandInvoker = new CommandInvoker();
+
     public void GetMenu()
     {
       string action;
@@ -34,24 +29,25 @@ namespace DEV_8
       switch (action)
       {
         case "Add user":
-          commandReciever.AddUser();
+          commandInvoker.SetCommand(new AddUserCommand());
           break;
         case "Get average age":
           Console.WriteLine("Average age is ");
-          commandReciever.GetAverageAge();
+          commandInvoker.SetCommand(new GetAverageAgeCommand());
           break;
         case "Get elder":
           Console.WriteLine("Elder user is ");
-          commandReciever.GetEldestUser();
+          commandInvoker.SetCommand(new GetOldestPersonCommand());
           break;
         case "Get popular woman name":
-          commandReciever.GetPopularWomanName();
+          commandInvoker.SetCommand(new GetMostPopularWomanNameCommand());
           break;
         default:
           Console.Clear();
           Console.WriteLine("We don't know this command. Please try again.");
           break;
       }
+      commandInvoker.Run();
       return key;
     }
   }

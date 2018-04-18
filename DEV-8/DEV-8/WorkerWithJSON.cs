@@ -1,22 +1,22 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
 
 namespace DEV_8
 {
-  /// <summary>
-  /// This class work with JSON file
-  /// </summary>
   class WorkerWithJSON
   {
     private const string pathToJsonFileWithUsers = @"D:\TAT_18\TAT_18\DEV-8\ListOfUsers.json";
+    private const string pathToJsonFileWithNamesakes = @"D:\TAT_18\TAT_18\DEV-8\ListOfTheNamesakes.json";
 
     /// <summary>
-    /// This method writes to a file from the list of users
+    /// Writes to the list of users
     /// </summary>
-    /// <param name="users">list of users</param>
+    /// <param name="users"></param>
     public void Serialized(List<User> users)
     {
+      //List<User> users = CreateList();
       string serialized = JsonConvert.SerializeObject(users);
       using (StreamWriter file = new StreamWriter(pathToJsonFileWithUsers))
       {
@@ -25,9 +25,23 @@ namespace DEV_8
     }
 
     /// <summary>
-    /// This method is written to the user list
+    /// Writes to the list of Namesakes
     /// </summary>
-    /// <returns>list of users</returns>
+    /// <param name="users"></param>
+    public void SerializedToListOfNamesakes(List<User> users)
+    {
+      //List<User> users = CreateList();
+      string serialized = JsonConvert.SerializeObject(users);
+      using (StreamWriter file = new StreamWriter(pathToJsonFileWithNamesakes))
+      {
+        file.Write(serialized);
+      }
+    }
+
+    /// <summary>
+    /// Writes to the collection
+    /// </summary>
+    /// <returns></returns>
     public List<User> Deserialized()
     {
       List<User> usersFromFile = new List<User>();

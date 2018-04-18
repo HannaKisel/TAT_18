@@ -45,17 +45,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommandReciever.cs" />
+    <Compile Include="GetAverageAgeCommand.cs" />
+    <Compile Include="CommandInvoker.cs" />
+    <Compile Include="CommandReceiver.cs" />
     <Compile Include="DataCreator.cs" />
     <Compile Include="EntryPoint.cs" />
+    <Compile Include="GetMostPopularWomanNameCommand.cs" />
+    <Compile Include="GetOldestPersonCommand.cs" />
+    <Compile Include="ICommand.cs" />
+    <Compile Include="AddUserCommand.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CoincidenceOfTheSurnamesEventArgs.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserRegistration.cs" />
     <Compile Include="WorkerWithJSON.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
