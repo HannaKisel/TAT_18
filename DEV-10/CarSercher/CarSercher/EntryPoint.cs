@@ -23,9 +23,9 @@ namespace CarSercher
         List<KeyValuePair<string, string>> sortedCarsByCount = carDictionary.SortCarDictionaryInDescendingOrder(modelsList);
         carDictionary.DisplayListOfModelsInConsole(sortedCarsByCount);
       }
-      catch (Exception exception)
+      catch (Exception)
       {
-        Console.WriteLine(exception.Message);
+        Console.WriteLine("Your model does not exist on the site");
       }
     }
   }

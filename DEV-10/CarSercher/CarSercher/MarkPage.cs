@@ -26,9 +26,9 @@ namespace CarSercher
     /// <returns></returns>
     public MarkPage GetModelsNames()
     {
-     ReadOnlyCollection<IWebElement> elementsList = Driver.FindElements(Models);
+      ReadOnlyCollection<IWebElement> elementsList = Driver.FindElements(Models);
       modelsList = new List<string>();
-      foreach(IWebElement element in elementsList)
+      foreach (IWebElement element in elementsList)
       {
         modelsList.Add(element.Text);
       }

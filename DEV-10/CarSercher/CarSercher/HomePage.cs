@@ -11,6 +11,7 @@ namespace CarSercher
     private string carMark = "//span[text()='{0}']/parent::a[@href]";
     private By ShowAllMarksButton = By.XPath("//a[@class='js-brands-show-all']");
     private By ClosePopUpButton = By.XPath("//span[@class='survey-popup-close js-survey-popup-close']");
+    private By AllBrands = By.XPath("//div[@class='brands']");
     public IWebDriver Driver { get; private set; }
 
     public HomePage(IWebDriver driver)
@@ -49,8 +50,15 @@ namespace CarSercher
     /// <returns></returns>
     public MarkPage ClickOnCarMark(string brand)
     {
-      Driver.FindElement(By.XPath(String.Format(carMark, brand))).Click();
-      return new MarkPage(Driver);
+      if (Driver.FindElement(By.XPath(String.Format(carMark, brand))).Displayed)
+      {
+        Driver.FindElement(By.XPath(String.Format(carMark, brand))).Click();
+        return new MarkPage(Driver);
+      }
+      else
+      {
+        throw new Exception();
+      }
     }
   }
 }
