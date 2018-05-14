@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CountDays">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CountDaysResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CountDaysResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CountDaysSoapIn">
+    <wsdl:part name="parameters" element="tns:CountDays" />
+  </wsdl:message>
+  <wsdl:message name="CountDaysSoapOut">
+    <wsdl:part name="parameters" element="tns:CountDaysResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DaysCounterSoap">
+    <wsdl:operation name="CountDays">
+      <wsdl:input message="tns:CountDaysSoapIn" />
+      <wsdl:output message="tns:CountDaysSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DaysCounterSoap" type="tns:DaysCounterSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CountDays">
+      <soap:operation soapAction="http://tempuri.org/CountDays" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DaysCounterSoap12" type="tns:DaysCounterSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CountDays">
+      <soap12:operation soapAction="http://tempuri.org/CountDays" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DaysCounter">
+    <wsdl:port name="DaysCounterSoap" binding="tns:DaysCounterSoap">
+      <soap:address location="http://localhost:52433/WebFile.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DaysCounterSoap12" binding="tns:DaysCounterSoap12">
+      <soap12:address location="http://localhost:52433/WebFile.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
