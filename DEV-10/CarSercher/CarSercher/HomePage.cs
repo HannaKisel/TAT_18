@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using System;
 
-namespace CarSercher
+namespace CarSearcher
 {
   /// <summary>
   /// This class contains methods that work with the home page of the site
@@ -48,7 +48,7 @@ namespace CarSercher
     /// </summary>
     /// <param name="brand">brand of selected car</param>
     /// <returns></returns>
-    public MarkPage ClickOnCarMark(string brand)
+    public MarkPage NavigateToNewMarkPage(string brand)
     {
       if (Driver.FindElement(By.XPath(String.Format(carMark, brand))).Displayed)
       {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CarSercher
+namespace CarSearcher
 {
   /// <summary>
   /// This class contains methods that allow you to perform some manipulations on the list of models
@@ -28,6 +28,7 @@ namespace CarSercher
     /// <param name="sortedCarsByCount"></param>
     public void DisplayListOfModelsInConsole(List<KeyValuePair<string, string>> modelsList)
     {
+      Console.WriteLine("\n All models with selected mark");
       foreach (var model in modelsList)
       {
         Console.WriteLine("{0}: {1}", model.Key, model.Value);

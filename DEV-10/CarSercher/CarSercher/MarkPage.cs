@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace CarSercher
+namespace CarSearcher
 {
   /// <summary>
   /// This class contains methods that work with the selected brand page
