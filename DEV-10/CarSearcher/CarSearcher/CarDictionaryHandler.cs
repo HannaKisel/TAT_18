@@ -28,7 +28,7 @@ namespace CarSearcher
     /// <param name="sortedCarsByCount"></param>
     public void DisplayListOfModelsInConsole(List<KeyValuePair<string, string>> modelsList)
     {
-      Console.WriteLine("\n All models with selected mark");
+      Console.WriteLine("\n All available cars on the site with the selected car brand");
       foreach (var model in modelsList)
       {
         Console.WriteLine("{0}: {1}", model.Key, model.Value);
