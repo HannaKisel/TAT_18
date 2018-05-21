@@ -21,7 +21,7 @@ namespace VK
       WaitForElement(LoginArea);
       IWebElement login = webDriver.FindElement(LoginArea);
       login.SendKeys("375298006534");
-      webDriver.FindElement(PasswordArea).SendKeys("amo408");
+      webDriver.FindElement(PasswordArea).SendKeys("moroza");
       webDriver.FindElement(LoginButton).Click();
       return new ProfilePage(webDriver);
     }

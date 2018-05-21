@@ -16,15 +16,15 @@ namespace Selenium
     {
       Driver = new ChromeDriver();
       Driver.Manage().Window.Maximize();
+      Driver.Navigate().GoToUrl(URLONPROFILE);
     }
 
     [TestMethod]
     public void TestAbilityToReadMessages()
     {
-      Driver.Navigate().GoToUrl(URLONPROFILE);
       AuthorizationPage authorizationPage = new AuthorizationPage(Driver);
       ProfilePage profilePage = authorizationPage.LogIn();
-      profilePage.GoToMessagePage().ReadFirstMessage();
+      profilePage.GoToMessagePage().ReadFirstMessage().GoToFriendsPage();
     }
 
     [TestCleanup]

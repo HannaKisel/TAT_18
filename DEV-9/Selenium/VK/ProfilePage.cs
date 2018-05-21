@@ -10,7 +10,7 @@ namespace VK
     private readonly By Message = By.XPath("//span[contains(text(),'Сообщения')]");
     private readonly By FirstDialogue = By.XPath("//div[@class='nim-dialog--cw'][1]");
     private readonly By ReadCurrentMessage = By.XPath("//div[@class='ui_clean_list im-mess-stack--mess _im_stack_messages']");
-
+   
     public ProfilePage(IWebDriver webdriver)
     {
       this.webDriver = webdriver;

@@ -54,6 +54,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthorizationPage.cs" />
+    <Compile Include="FriendPage.cs" />
+    <Compile Include="FriendsPage.cs" />
     <Compile Include="MessagesPage.cs" />
     <Compile Include="ProfilePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
