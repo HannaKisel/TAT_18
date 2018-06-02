@@ -1,12 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace FileFinderWithSpecifiedExtension
 {
   class FolderInformationManipulator
   {
+    public string FilePath { get; private set; }
+
+    public FolderInformationManipulator(string filePath)
+    {
+      FilePath = filePath;
+    }
+
+    public List<string> GetFilesWithSpecifiedExtension(string specifiedExtension)
+    {
+      StringBuilder filesList = new StringBuilder();
+      return ;
+    }   
   }
 }

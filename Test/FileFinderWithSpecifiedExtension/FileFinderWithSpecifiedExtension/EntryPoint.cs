@@ -6,10 +6,16 @@ using System.Threading.Tasks;
 
 namespace FileFinderWithSpecifiedExtension
 {
-  class Program
+  class EntryPoint
   {
     static void Main(string[] args)
     {
+      Console.WriteLine("Enter file path: ");
+      string filePath = Console.ReadLine();
+      FolderInformationManipulator folderInformationManipulator = new FolderInformationManipulator(filePath);
+      List<string> fileList = new List<string>();
+      fileList = folderInformationManipulator.GetFilesWithSpecifiedExtension(args[0]);
+
     }
   }
 }
