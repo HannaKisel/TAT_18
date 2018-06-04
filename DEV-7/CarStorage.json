@@ -1,0 +1,24 @@
+[
+{
+	"Mark":"BMV",
+	"Model":"X1",
+	"BodyType":"station wagon",
+	"TypeOfTransfer":"automatic", 
+	"TypeOfEngine":"petrol", 
+	"Volume":"6.5 liters",
+	"Power":"136 horsepower",
+	"ClimateControl":"climate control",
+	"InteriorType":"combined"
+},
+{
+	"Mark":"Mazda",
+	"Model":"Top car",
+	"BodyType":"sedan",
+	"TypeOfTransfer":"automatic", 
+	"TypeOfEngine":"electro", 
+	"Volume":"600 Vt",
+	"Power":"100 horsepower",
+	"ClimateControl":"air conditioning",
+	"InteriorType":"leather"
+}
+]
