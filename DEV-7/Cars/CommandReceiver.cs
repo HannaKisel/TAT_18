@@ -24,9 +24,6 @@ namespace Cars
       }
     }
 
-    public void SetOptions()
-    { }
-
     public void AddCarToCatalog()
     {
       CarsCatalog.AddToCatalog(carOptionsReader.GetOrder());
@@ -67,7 +64,5 @@ namespace Cars
                              select item;
       return selectedVariants;
     }
-    public void CheckCatalog()
-    { }
   }
 }
